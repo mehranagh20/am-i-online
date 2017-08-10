@@ -10,8 +10,10 @@ DNS_WORKING=true
 NUM_TRIED_FOR_RESOLVING=0           # number of failed attempts for dns resolving.
 IP=4.2.2.2                          # if attempting to ping to check connectivity.
 URLS=("google.com" "github.com")    # list of urls we attempt to resolve for dns.
-SWBND=10                            # seconds waiting before notifing disconnection, for being sure
+SWBND=5                            # seconds waiting before notifing disconnection, for being sure
 NOABND=3                            # number of attemps for dns resolving before being sure dns has problem.
+NSSACC=1                            # number of seconds to sleep after each check of getting connection back.
+NSSADC=2                            # number of seconds to sleep after each check of getting disconnected.
 
 notify-send "Am I Online?"  "Watching Internet Connection Started"
 
@@ -57,8 +59,35 @@ while true; do
 
         fi
         
-        sleep 5
+        sleep $NSSADC
+
     else
-        :
+
+        if ping -q -c 1 -W 1 $IP > /dev/null 2>&1; then
+            CONNECTED=true
+            SECONDS=0
+            
+            DNS_OK=false
+            for URL in ${URLS[@]}; do
+                if ping -q -c 1 -W 1 $URL > /dev/null 2>&1; then
+                    DNS_OK=true
+                    break
+                fi
+            done
+
+            if $DNS_OK; then
+                DNS_WORKING=true
+                notify-send "Am I Online? You got back online" "DNS seems to be ok too. i'll notify you in case of problem :) "
+
+            else
+                DNS_WORKING=false
+                notify-send "Am I Online? You got back online" "DNS seems to have some problems, i'll notify you in case of problem :)"
+
+            fi
+
+        fi
+
+        sleep $NSSACC
+
     fi
 done
