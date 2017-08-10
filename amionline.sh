@@ -8,10 +8,10 @@ export XAUTHORITY=/run/user/1000/gdm/Xauthority
 CONNTECTED=true
 DNS_WORKING=true
 NUM_TRIED_FOR_RESOLVING=0           # number of failed attempts for dns resolving.
-IP=4.2.2.2                          # if attempting to ping to check connectivity.
+IP=4.2.2.2                          # ip attempting to ping to check connectivity.
 URLS=("google.com" "github.com")    # list of urls we attempt to resolve for dns.
 SWBND=5                            # seconds waiting before notifing disconnection, for being sure
-NOABND=3                            # number of attemps for dns resolving before being sure dns has problem.
+NOABND=3                            # number of attempts for dns resolving before being sure dns has problem.
 NSSACC=1                            # number of seconds to sleep after each check of getting connection back.
 NSSADC=2                            # number of seconds to sleep after each check of getting disconnected.
 
