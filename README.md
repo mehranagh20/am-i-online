@@ -2,7 +2,7 @@ _am i online_
 ===
 A Daemon which notifies you of changes in your internet connectivity and DNS resolution.
 ___
-It only takes some seconds to get **_am i online_** to work. [Use it now][#installation]
+It only takes some seconds to get **_am i online_** to work. [Use it now](#installation)
 
 Why to use **_am i online_**?
 ---
