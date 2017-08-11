@@ -1,5 +1,5 @@
 # _am i online_
-A Daemon which notifies you of changes in your internet conectivity and DNS resolution.
+A Daemon which notifies you of changes in your internet connectivity and DNS resolution.
 
 ## Why to use **_am i online_**?
 ### by using **_am i online_**:
