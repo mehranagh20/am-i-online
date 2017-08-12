@@ -24,13 +24,18 @@ will hold necessary things to have to get **_am i online_** to work.
 
 Installation
 ---
-**linux and mac:**
+**linux:**
 ```bash
 git clone https://github.com/mehranagh20/am-i-online.git
 cd am-i-online
 chmod +x install.sh amionline.sh
 sudo ./install.sh --install # nothing but configuring a service requires root permission so do not worry :)
 # Install script will do all things necessary to get am i online working.
+```
+
+**mac:**
+```
+Under Development.
 ```
 
 **on windows**:
